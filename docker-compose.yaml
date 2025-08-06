@@ -1,0 +1,17 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    container_name: ai-study-buddy-dev
+    ports:
+      # Map port 5173 on your local machine to port 5173 in the container
+      - "5173:5173"
+    volumes:
+      # Mount the local source code into the container for hot-reloading
+      - .:/app
+      # Use an anonymous volume to keep node_modules inside the container
+      - /app/node_modules
+    env_file:
+      # Load the API key
+      - .env
