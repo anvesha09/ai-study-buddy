@@ -19,22 +19,22 @@ An intelligent web application that leverages the Google Gemini API to automatic
 
 ## Tech Stack
 
-# Frontend: React, Vite, TypeScript
+### Frontend: React, Vite, TypeScript
 
-#  Styling: Tailwind CSS
+###  Styling: Tailwind CSS
 
-# AI: Google Gemini API
+### AI: Google Gemini API
 
-# Containerization: Docker & Nginx
+### Containerization: Docker & Nginx
 
-# Deployment: Google Cloud Run, Google Cloud Build, Google Artifact Registry
+### Deployment: Google Cloud Run, Google Cloud Build, Google Artifact Registry
 
-# Security: Google Secret Manager
+### Security: Google Secret Manager
 ---
 
-## Getting Started (Local Development)
+# Getting Started (Local Development)
 
-# Prerequisites
+## Prerequisites
 
 ### 1. Node.js (v20.x or later)
 ### 2. Git
@@ -69,12 +69,12 @@ Open (http://localhost:5173) to view it in your browser.
 
 This project is configured for a seamless deployment to Google Cloud Run using Cloud Build.
 
-# Prerequisites
+### Prerequisites
 
-- A Google Cloud Project with billing enabled.
-- The gcloud CLI installed and authenticated.
+- ***A Google Cloud Project with billing enabled.
+- ***The gcloud CLI installed and authenticated.
 
-# Deployment Steps
+## Deployment Steps
 ### 1. Set up your environment:
 
 Make sure your gcloud CLI is pointing to the correct project.
