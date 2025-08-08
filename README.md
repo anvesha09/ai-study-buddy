@@ -1,6 +1,7 @@
 # AI Study Buddy & Quiz Generator
 
 An intelligent web application that leverages the Google Gemini API to automatically generate quizzes and flashcards from any given text, making studying more efficient and interactive.
+
 ---
 
 ## Core Features
