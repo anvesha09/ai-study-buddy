@@ -71,8 +71,8 @@ This project is configured for a seamless deployment to Google Cloud Run using C
 
 ### Prerequisites
 
-- ***A Google Cloud Project with billing enabled.
-- ***The gcloud CLI installed and authenticated.
+- **A Google Cloud Project with billing enabled.
+- **The gcloud CLI installed and authenticated.
 
 ## Deployment Steps
 ### 1. Set up your environment:
@@ -98,13 +98,13 @@ This command uses the cloudbuild.yaml file to build your container, passing the 
 
 This process involves two commands: one to grant permissions and one to deploy the service.
 
-- ***First, grant the Cloud Run service account access to the secret. You will need your Project Number for this, which you can get by running gcloud projects describe [YOUR_PROJECT_ID] --format="value(projectNumber)".
+- **First, grant the Cloud Run service account access to the secret. You will need your Project Number for this, which you can get by running gcloud projects describe [YOUR_PROJECT_ID] --format="value(projectNumber)".
 ``` gcloud secrets add-iam-policy-binding gemini-api-key \
   --member="serviceAccount:[YOUR_PROJECT_NUMBER]-compute@developer.gserviceaccount.com" \
   --role="roles/secretmanager.secretAccessor"
 ```
 
-- ***Finally, deploy the service. This command uses the image you just built and tells Cloud Run to connect to port 80 inside the container. 
+- **Finally, deploy the service. This command uses the image you just built and tells Cloud Run to connect to port 80 inside the container. 
 ``` gcloud run deploy ai-study-buddy-service \
   --image=us-central1-docker.pkg.dev/[YOUR_PROJECT_ID]/my-app-repo/ai-study-buddy \
   --allow-unauthenticated \
@@ -116,17 +116,17 @@ This process involves two commands: one to grant permissions and one to deploy t
 
 ### Architecture
 
-- ***The frontend is a static single-page application (SPA) built by Vite. The Gemini API key is securely embedded into the static JavaScript files during the build process.
+- **The frontend is a static single-page application (SPA) built by Vite. The Gemini API key is securely embedded into the static JavaScript files during the build process.
 
-- ***The Dockerfile creates a multi-stage build.
+- **The Dockerfile creates a multi-stage build.
 
-- ***The builder stage installs dependencies and runs npm run build to create the static dist/ directory.
+- **The builder stage installs dependencies and runs npm run build to create the static dist/ directory.
 
-- ***The final stage uses a lightweight Nginx server to serve the static files.
+- **The final stage uses a lightweight Nginx server to serve the static files.
 
-- ***Cloud Build reads the cloudbuild.yaml file to automate the entire Docker build process.
+- **Cloud Build reads the cloudbuild.yaml file to automate the entire Docker build process.
 
-- ***The final container is deployed as a serverless service on Cloud Run, which automatically handles scaling.
+- **The final container is deployed as a serverless service on Cloud Run, which automatically handles scaling.
 
 
 
